@@ -58,7 +58,6 @@ function getNotes(baseSet)
 const Notes = getNotes(wellTemperedNotes);
 
 let intervals = [];
-
 let noteSerie = [];
 
 
@@ -75,18 +74,24 @@ gainNode.connect(context.destination);
 
 oscillateur.type = 'square';
 // oscillateur.frequency.value = 540;
-oscillateur.start(0);
+
 
 gainNode.gain.value = 0;
 console.log(context)
 
 function musique()
 {
-    gainNode.gain.value = 1;
+    gainNode.gain.value = 0.1;
     oscillateur.frequency.value = Notes.A[4]
-    setTimeout
+    // setTimeout
 }
 
-setTimeout(musique,1000)
 
-document.body.addEventListener("keydown", play)
+
+document.body.querySelector("p").addEventListener("click", ()=>{
+    
+    oscillateur.start(0);
+    musique()
+
+})
+// document.body.addEventListener("keydown", play)
