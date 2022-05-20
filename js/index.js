@@ -2,39 +2,30 @@ import {Notes} from "./getNotes.js"
 
 let intervals = [];
 let noteSerie = [];
-
-
-
-let context = new AudioContext();
-let oscillateur = context.createOscillator();
-let gainNode = context.createGain();
-
-oscillateur.connect(gainNode);
-
-
-gainNode.connect(context.destination);
-
-
-oscillateur.type = 'square';
-// oscillateur.frequency.value = 540;
-
-
-gainNode.gain.value = 0;
-console.log(context)
-
-function musique()
+function synthInit()
 {
-    gainNode.gain.value = 0.1;
-    oscillateur.frequency.value = Notes.A[4]
-    // setTimeout
+    let context = new AudioContext();
+    let oscillateur = context.createOscillator();
+    let gainNode = context.createGain();
+
+    oscillateur.connect(gainNode);
+    gainNode.connect(context.destination);
+
+    oscillateur.type = 'square';
+    gainNode.gain.value = 0;
+    // oscillateur.frequency.value = 440;
+
+    oscillateur.start(0);
 }
 
-
-
-document.body.querySelector("p").addEventListener("click", ()=>{
+function synthDisplay()
+{
+    document.querySelector(".synthStarter").remove();
     
-    oscillateur.start(0);
-    musique()
+}
 
+document.body.querySelector(".synthStarter").addEventListener("click", ()=>{
+    synthInit();
+    synthDisplay();
 })
 // document.body.addEventListener("keydown", play)
