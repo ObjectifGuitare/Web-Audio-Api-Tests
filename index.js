@@ -54,6 +54,7 @@ function getNotes(baseSet)
     return allNotes;
 }
 
+//notes can be accessed by doing Notes.C[1] for C1
 const Notes = getNotes(wellTemperedNotes);
 
 
