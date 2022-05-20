@@ -57,6 +57,10 @@ function getNotes(baseSet)
 //notes can be accessed by doing Notes.C[1] for C1
 const Notes = getNotes(wellTemperedNotes);
 
+let intervals = [];
+
+let noteSerie = [];
+
 
 
 let context = new AudioContext();
@@ -70,15 +74,17 @@ gainNode.connect(context.destination);
 
 
 oscillateur.type = 'square';
-oscillateur.frequency.value = 440;
+// oscillateur.frequency.value = 540;
 oscillateur.start(0);
 
-gainNode.gain.value = 1;
+gainNode.gain.value = 0;
 console.log(context)
 
 function musique()
 {
-    oscillateur.frequency.value = 880
+    gainNode.gain.value = 1;
+    oscillateur.frequency.value = Notes.A[4]
+    setTimeout
 }
 
 setTimeout(musique,1000)
