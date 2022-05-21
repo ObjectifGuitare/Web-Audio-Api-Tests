@@ -23,10 +23,10 @@ function synthDisplay()
     document.querySelector(".synthStarter").remove();
     
 }
-console.log(a)
+console.log("a")
 
-// document.body.querySelector(".synthStarter").addEventListener("click", ()=>{
-//     // synthInit();
-//     synthDisplay();
-// })
+document.body.querySelector(".synthStarter").addEventListener("click", ()=>{
+    synthInit();
+    // synthDisplay();
+})
 // document.body.addEventListener("keydown", play)
