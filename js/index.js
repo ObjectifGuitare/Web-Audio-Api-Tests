@@ -12,8 +12,8 @@ function synthInit()
     gainNode.connect(context.destination);
 
     oscillateur.type = 'square';
-    gainNode.gain.value = 0;
-    // oscillateur.frequency.value = 440;
+    gainNode.gain.value = 1;
+    oscillateur.frequency.value = Notes.A[4];
 
     oscillateur.start(0);
 }
@@ -23,9 +23,10 @@ function synthDisplay()
     document.querySelector(".synthStarter").remove();
     
 }
+console.log(a)
 
-document.body.querySelector(".synthStarter").addEventListener("click", ()=>{
-    synthInit();
-    synthDisplay();
-})
+// document.body.querySelector(".synthStarter").addEventListener("click", ()=>{
+//     // synthInit();
+//     synthDisplay();
+// })
 // document.body.addEventListener("keydown", play)
