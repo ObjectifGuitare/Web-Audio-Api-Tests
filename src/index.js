@@ -24,9 +24,9 @@ function synthInit()
     
 }
 
-function stop(e)
+function stopSound(e)
 {
-    console.log("onergjn");
+    console.log(e);
     // oscillateur.stop(0);
     gainNode.gain.value = 0;
 }
@@ -103,6 +103,7 @@ function synthDisplay()
     let noteNumber = 0;
     document.querySelector(".synthStarter").remove();
     let board = document.querySelector("#board")
+    document.body.addEventListener("keyup", (e)=>{stopSound(e)})
     for(let i = 0; i < 12; i++)
     {
         let div = document.createElement("div");
@@ -114,7 +115,6 @@ function synthDisplay()
         })
         document.body.addEventListener("keydown", octaveModulation)
         div.addEventListener("click", play)
-        div.addEventListener('keyup', stop)
     }
 }
 
@@ -123,4 +123,3 @@ document.body.querySelector(".synthStarter").addEventListener("click", ()=>{
     synthDisplay();
     
 })
-
