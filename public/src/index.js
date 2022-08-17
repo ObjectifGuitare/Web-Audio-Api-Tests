@@ -1,7 +1,6 @@
 import {Notes} from "./getNotes.js"
 
-let intervals = [];
-let noteSerie = [];
+
 let octave = 4;
 
 let context;
@@ -16,7 +15,7 @@ function synthInit()
     oscillateur.connect(gainNode);
     gainNode.connect(context.destination);
 
-    oscillateur.type = 'triangle';
+    oscillateur.type = 'square';
 
     gainNode.gain.value = 0;
     oscillateur.frequency.value = Notes.A[4];
