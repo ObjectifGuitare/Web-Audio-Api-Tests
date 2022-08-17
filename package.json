@@ -1,6 +1,8 @@
 {
-  "name": "my-project",
-  "source": "index.html",
+  "name": "audio_api_test_docker",
+  "version": "1.0.0",
+  "description": "A simple monophonic synth running with express js on a docker image",
+  "author": "Sébastien Patez <patez.sebastien@gmail.com>",
   "scripts": {
     "start": "parcel",
     "build": "parcel build"
