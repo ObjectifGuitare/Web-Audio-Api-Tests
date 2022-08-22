@@ -9,7 +9,7 @@ import {fileURLToPath} from 'url';
 
 
 
-const PORT = 3000;
+const PORT = 8080;
 const app = express();
 app.use(express.static("./public"))
 app.listen(PORT, () => console.log(`Server start: http://localhost:${PORT}/`));
